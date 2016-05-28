@@ -1,4 +1,3 @@
-[submodule "awmtt"]
+[submodule "awesome/contrib/awmtt"]
 	path = awesome/contrib/awmtt
 	url = git@github.com:mikar/awmtt.git
-    description = "awesome wm config testing script"
