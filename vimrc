@@ -1,5 +1,22 @@
 set nocompatible
 
+"======== Plugins setup =============
+filetype off
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()            " required
+"===================================
+
+
+filetype plugin indent on    " required
+
+
+" main setup
 scriptencoding utf-8
 set encoding=utf-8
 set termencoding=utf-8
