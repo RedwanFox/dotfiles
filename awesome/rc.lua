@@ -1,10 +1,12 @@
 -- Standard awesome library
+local gl = require("global")
 local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -56,29 +58,13 @@ terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
--- Table of layouts to cover with awful.layout.inc, order matters.
-local layouts =
-{
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
-}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4 }, s, gl.layouts[1])
 end
 -- }}}
 -------------------------------------------------------
@@ -96,7 +82,7 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
                                     { "Интернеты", "yandex-browser-beta" },
                                     { "Pidgin", "pidgin"},
-                                    { "Telegram", "~/Soft/Telegram/Telegram"},
+                                    { "Telegram", "/home/redwaan/Soft/Telegram/Telegram"},
                                     { "Рабочие чатики", "slack" },
                                     { "Консоль", terminal },
                                     { "Прочее", debian.menu.Debian_menu.Debian }
@@ -171,10 +157,10 @@ for s = 1, screen.count() do
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
     mylayoutbox[s]:buttons(awful.util.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
-                           awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
+                           awful.button({ }, 1, function () awful.layout.inc(gl.layouts, 1) end),
+                           awful.button({ }, 3, function () awful.layout.inc(gl.layouts, -1) end),
+                           awful.button({ }, 4, function () awful.layout.inc(gl.layouts, 1) end),
+                           awful.button({ }, 5, function () awful.layout.inc(gl.layouts, -1) end)))
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
@@ -193,6 +179,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    -- right_layout:add(vicious.
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
