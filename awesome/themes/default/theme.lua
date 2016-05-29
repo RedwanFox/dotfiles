@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "ubuntu mono 12"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -41,8 +41,8 @@ theme.taglist_squares_unsel = "~/.config/awesome/themes/default/taglist/squarew.
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = "~/.config/awesome/themes/default/submenu.png"
-theme.menu_height = 15
-theme.menu_width  = 100
+--theme.menu_height = 15
+theme.menu_width  = 140
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -73,7 +73,7 @@ theme.titlebar_maximized_button_focus_inactive  = "~/.config/awesome/themes/defa
 theme.titlebar_maximized_button_normal_active = "~/.config/awesome/themes/default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "~/.config/awesome/themes/default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/.config/awesome/themes/default/background.png"
+theme.wallpaper = "~/.config/awesome/wallpaper.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "~/.config/awesome/themes/default/layouts/fairhw.png"
@@ -88,8 +88,6 @@ theme.layout_tile = "~/.config/awesome/themes/default/layouts/tilew.png"
 theme.layout_tiletop = "~/.config/awesome/themes/default/layouts/tiletopw.png"
 theme.layout_spiral  = "~/.config/awesome/themes/default/layouts/spiralw.png"
 theme.layout_dwindle = "~/.config/awesome/themes/default/layouts/dwindlew.png"
-
-theme.awesome_icon = "~/.config/awesome/icons/awesome16.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
