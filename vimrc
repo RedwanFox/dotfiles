@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -60,8 +61,10 @@ set ignorecase
 "" tabs for spaces
 filetype plugin indent on
 set tabstop=4
+set softtabstop=0
 set shiftwidth=4
 set expandtab
+set smarttab
 
 " display trailing spaces and tabs
 set listchars=tab:..,trail:·
@@ -79,6 +82,8 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 set wildmenu
 set showcmd
+
+set autochdir " vim begins to change current dir according to current opened file.
 
 "================== MAPPINGS LOCALISATION ===========
 map ё `
