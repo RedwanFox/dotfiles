@@ -6,12 +6,16 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 call vundle#end()            " required
 "===================================
-
+let g:airline_powerline_fonts=1
 
 filetype plugin indent on    " required
 
