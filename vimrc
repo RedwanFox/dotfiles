@@ -14,6 +14,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()            " required
 "===================================
 let g:airline_powerline_fonts=1
@@ -85,6 +87,15 @@ set showcmd
 
 set autochdir " vim begins to change current dir according to current opened file.
 
+"================= MAPPINGS =========================
+
+map <F1> :Tagbar<CR>
+map <F2> :NERDTreeToggle<CR>
+
+map <F3> :setlocal spell! spelllang=ru_ru<CR>
+
+autocmd FileType c,cpp,cs,python nnoremap <F4> :YcmDiags<CR>
+
 "================== MAPPINGS LOCALISATION ===========
 map ё `
 map й q
@@ -152,4 +163,8 @@ map Т N
 map Ь M
 map Б <
 map Ю >
-"==========================================
+"=============PLUGINS CONFIG==================
+
+" Tagbar
+let g:tagbar_left = 1
+let g:tagbar_width = 30
