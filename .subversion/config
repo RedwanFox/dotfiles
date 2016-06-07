@@ -3,6 +3,7 @@
 [helpers]
 editor-cmd = vim
 diff-cmd = colordiff
+diff-extensions = -y --width=180
 
 [tunnels]
 
