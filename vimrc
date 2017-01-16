@@ -16,12 +16,16 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'wannesm/wmgraphviz.vim'
+Plugin 'lervag/vimtex'
+Plugin 'vimwiki/vimwiki'
+Plugin 'kien/ctrlp.vim'
+
 call vundle#end()            " required
 "===================================
 let g:airline_powerline_fonts=1
 
 filetype plugin indent on    " required
-
 
 " main setup
 scriptencoding utf-8
@@ -29,9 +33,8 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r
 
-colorscheme desert
+colorscheme elflord
 syntax on
-
 
 set number "line number
 set relativenumber "relative line numbers beside current
@@ -95,6 +98,8 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :setlocal spell! spelllang=ru_ru<CR>
 
 autocmd FileType c,cpp,cs,python nnoremap <F4> :YcmDiags<CR>
+
+
 
 "================== MAPPINGS LOCALISATION ===========
 map ё `
@@ -168,3 +173,11 @@ map Ю >
 " Tagbar
 let g:tagbar_left = 1
 let g:tagbar_width = 30
+
+let g:vimwiki_list = [{'path': '~/Yandex.Disk/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+"NerdTree
+let NERDTreeIgnore = ['\.pyc$']
+
+"YouCompleteMe
+highlight Pmenu ctermbg=White ctermfg=Black
